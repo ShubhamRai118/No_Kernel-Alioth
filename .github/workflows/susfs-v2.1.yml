@@ -21,7 +21,7 @@ on:
         required: true
       ANYKERNEL_URL:
         description: 'AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/AlirezaParsi/F3aosp'
+        default: 'https://github.com/ShubhamRai118/F3aosp'
         required: false
       ANYKERNEL_BRANCH:
         description: 'AnyKernel Branch (defaults to codename)'
@@ -29,7 +29,7 @@ on:
         required: false
       SECOND_ANYKERNEL_URL:
         description: 'secound AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/AlirezaParsi/hyperf3'
+        default: 'https://github.com/ShubhamRai118/hyperf3'
         required: false
       SECOND_ANYKERNEL_BRANCH:
         description: 'Second AnyKernel Branch (defaults to codename)'
