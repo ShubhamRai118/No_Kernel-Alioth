@@ -9,7 +9,7 @@ on:
         required: false
       KERNEL_TREE:
         description: 'Kernel Tree'
-        default: 'https://github.com/AlirezaParsi/pocof3'
+        default: 'https://github.com/ShubhamRai118/No_Kernel-Alioth'
         required: true
       KERNEL_TREE_BRANCH:
         description: 'Kernel Tree Branch'
