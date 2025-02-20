@@ -297,7 +297,7 @@
 					39 01 00 00 00 00 03 51 00 00           /* Write Display Brightness */
 					/* 5 Display On */
 					05 01 00 00 00 00 02 29 00
-					/* 90hz Frequency Select*/
+					/* 120hz Frequency Select*/
 					39 01 00 00 00 00 02 60 10];
 				qcom,mdss-dsi-off-command = [
 					05 01 00 00 14 00 02 28 00
