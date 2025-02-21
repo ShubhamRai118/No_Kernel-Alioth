@@ -9,7 +9,7 @@ on:
         required: false
       KERNEL_TREE:
         description: 'Kernel Tree'
-        default: 'https://github.com/AlirezaParsi/sadangel-kernel'
+        default: 'https://github.com/ShubhamRai118/sadangel-kernel'
         required: true
       KERNEL_TREE_BRANCH:
         description: 'Kernel Tree Branch'
@@ -21,7 +21,7 @@ on:
         required: true
       ANYKERNEL_URL:
         description: 'AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/AlirezaParsi/F3aosp'
+        default: 'https://github.com/ShubhamRai118/F3aosp'
         required: false
       ANYKERNEL_BRANCH:
         description: 'AnyKernel Branch (defaults to codename)'
@@ -29,7 +29,7 @@ on:
         required: false
       SECOND_ANYKERNEL_URL:
         description: 'secound AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/AlirezaParsi/hyperf3'
+        default: 'https://github.com/ShubhamRai118/hyperf3'
         required: false
       SECOND_ANYKERNEL_BRANCH:
         description: 'Second AnyKernel Branch (defaults to codename)'
@@ -123,7 +123,7 @@ jobs:
         if [ -e "dtbo.img" ]; then
           cp -f dtbo.img AnyKernel3
         fi
-         name=N0kernel-AOSP-KSUNEXTONlY-${{ github.event.inputs.CODENAME }}.zip
+         name=NoKernel-AOSP-KSUNEXTONlY-${{ github.event.inputs.CODENAME }}.zip
         cd AnyKernel3
         zip -q -r $name *
         mv $name ../
@@ -148,7 +148,7 @@ jobs:
         if [ -e "dtb" ]; then
           cp -f dtb SecondAnyKernel/dtb
         fi
-        second_name=N0kernel-HYPEROS-KSUNEXTONLY-${{ github.event.inputs.CODENAME }}.zip
+        second_name=NoKernel-HYPEROS-KSUNEXTONLY-${{ github.event.inputs.CODENAME }}.zip
         cd SecondAnyKernel
         zip -q -r $second_name *
         mv $second_name ../
