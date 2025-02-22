@@ -3,7 +3,7 @@ VERSION = 4
 PATCHLEVEL = 19
 SUBLEVEL = 246
 EXTRAVERSION =
-NAME = "People's Front"
+NAME = Dark_x_NoKernel
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
