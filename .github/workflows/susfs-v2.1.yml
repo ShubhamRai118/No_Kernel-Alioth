@@ -114,7 +114,6 @@ jobs:
         fi
         # Check if dtb.img exists, rename to dtb and copy it to AnyKernel3 folder
         if [ -e "dtb.img" ]; then
-          mv -f dtb.img dtb
           cp -f dtb AnyKernel3/dtb
         fi
         # Check if dtbo.img exists, then copy it to AnyKernel3 folder
