@@ -121,7 +121,7 @@ jobs:
         if [ -e "dtbo.img" ]; then
           cp -f dtbo.img AnyKernel3
         fi
-        name=Dark_Kernel-AOSP-KSUNEXT-SUSFS-${{ github.event.inputs.CODENAME }}
+        name=NoKernel-AOSP-KSUNEXT-SUSFS-${{ github.event.inputs.CODENAME }}
         cd AnyKernel3
         zip -q -r $name *
         mv $name ../
