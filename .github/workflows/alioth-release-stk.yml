@@ -5,31 +5,13 @@ on:
   workflow_dispatch:
     inputs:
       BUILD_TITLE:
-        description: 'Custom Build Title'
-        required: false
       KERNEL_TREE_1:
         description: 'Kernel Tree 1'
         default: 'https://github.com/ShubhamRai118/No_Kernel-Alioth'
         required: true
       KERNEL_TREE_BRANCH_1:
         description: 'Kernel Tree Branch 1'
-        default: 'next-main'
-        required: true
-      KERNEL_TREE_2:
-        description: 'Kernel Tree 2'
-        default: 'https://github.com/ShubhamRai118/No_Kernel-Alioth'
-        required: true
-      KERNEL_TREE_BRANCH_2:
-        description: 'Kernel Tree Branch 2'
         default: 'next-susfs'
-        required: true
-      KERNEL_TREE_3:
-        description: 'Kernel Tree 3'
-        default: 'https://github.com/ShubhamRai118/No_Kernel-alioth'
-        required: true
-      KERNEL_TREE_BRANCH_3:
-        description: 'Kernel Tree Branch 3'
-        default: 'no-ksu'
         required: true
       CODENAME:
         description: 'Phone Codename'
@@ -37,14 +19,14 @@ on:
         required: true
       ANYKERNEL_URL:
         description: 'AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/ShubhamRai118/anykernel3_test'
+        default: 'https://github.com/ShubhamRai118/F3aosp'
         required: false
 
 jobs:
   build:
     strategy:
       matrix:
-        kernel: [1, 2, 3]
+        kernel: [1, ]
         type: [original, modified]
     runs-on: ubuntu-latest
     env:
@@ -65,10 +47,6 @@ jobs:
           case "${{ matrix.kernel }}" in
             1) echo "KERNEL_TREE=${{ github.event.inputs.KERNEL_TREE_1 }}" >> $GITHUB_ENV
                echo "KERNEL_TREE_BRANCH=${{ github.event.inputs.KERNEL_TREE_BRANCH_1 }}" >> $GITHUB_ENV ;;
-            2) echo "KERNEL_TREE=${{ github.event.inputs.KERNEL_TREE_2 }}" >> $GITHUB_ENV
-               echo "KERNEL_TREE_BRANCH=${{ github.event.inputs.KERNEL_TREE_BRANCH_2 }}" >> $GITHUB_ENV ;;
-            3) echo "KERNEL_TREE=${{ github.event.inputs.KERNEL_TREE_3 }}" >> $GITHUB_ENV
-               echo "KERNEL_TREE_BRANCH=${{ github.event.inputs.KERNEL_TREE_BRANCH_3 }}" >> $GITHUB_ENV ;;
           esac
       - name: Checkout Kernel
         run: git clone --depth=1 $KERNEL_TREE -b $KERNEL_TREE_BRANCH kernel_tree
@@ -124,7 +102,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        kernel: [1, 2, 3]
+        kernel: [1, ]
     runs-on: ubuntu-latest
 
     steps:
@@ -152,12 +130,7 @@ jobs:
         run: |
           COMPILED_DATE=$(date +%Y%m%d)
           if [[ "${{ matrix.kernel }}" == "1" ]]; then
-            echo "ZIP_NAME=FakeDreamer-stk-next-${{ github.event.inputs.CODENAME }}-$COMPILED_DATE" >> $GITHUB_ENV
-          elif [[ "${{ matrix.kernel }}" == "2" ]]; then
             echo "ZIP_NAME=FakeDreamer-stk-susfs-${{ github.event.inputs.CODENAME }}-$COMPILED_DATE" >> $GITHUB_ENV
-          else
-            echo "ZIP_NAME=FakeDreamer-stk-noksu-${{ github.event.inputs.CODENAME }}-$COMPILED_DATE" >> $GITHUB_ENV
-          fi
       
       - name: Upload Flashable Kernel Zip
         uses: actions/upload-artifact@v4
