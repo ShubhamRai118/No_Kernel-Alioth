@@ -52,9 +52,9 @@
 				qcom,mdss-dsi-h-back-porch = <8>;
 				qcom,mdss-dsi-h-pulse-width = <8>;
 				qcom,mdss-dsi-h-sync-skew = <0>;
-				qcom,mdss-dsi-v-back-porch = <520>;
-				qcom,mdss-dsi-v-front-porch = <560>;
-				qcom,mdss-dsi-v-pulse-width = <28>;
+				qcom,mdss-dsi-v-back-porch = <220>;
+				qcom,mdss-dsi-v-front-porch = <260>;
+				qcom,mdss-dsi-v-pulse-width = <12>;
 				qcom,mdss-dsi-h-sync-pulse = <0>;
 				qcom,mdss-dsi-h-left-border = <0>;
 				qcom,mdss-dsi-h-right-border = <0>;
